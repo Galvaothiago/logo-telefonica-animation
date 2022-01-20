@@ -16,7 +16,7 @@ const Container = styled.div`
   display: grid;
   place-items: center;
 
-  background-color: #275dad;
+  background-color: #f9f8f8;
 `
 
 export default App;
