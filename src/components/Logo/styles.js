@@ -1,6 +1,50 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
-export const Container = styled.div`
+const growupEffect = keyframes`
+    0% {
+        transform:  scale(1);
+    }
+
+    50% {
+        transform: scale(1.09)
+    }
+
+    100% {
+        transform: scale(1);
+    }
+`
+
+const rigthEffect = keyframes`
+    0% {
+        transform:  translateX(0);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }   
+`
+
+const leftEffect = keyframes`
+    0% {
+        transform:  translateX(0);
+    }
+
+    50% {
+        transform: translateX(-30px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }   
+`
+
+export const Container = styled.div.attrs(props => {
+    
+})`
     max-width: 25rem;
     width: 100%;
     max-height: 25rem;
@@ -21,6 +65,8 @@ export const Container = styled.div`
 
             background-color: #4763ed;
             border-radius: 50%;
+
+            animation: ${growupEffect} 2.5s infinite ease-in-out;
         }
 
         &:nth-child(1) {
@@ -28,6 +74,11 @@ export const Container = styled.div`
             flex-direction: column;
             justify-content: flex-start;
             align-items: start;
+
+            span {
+                animation: ${props => props.effect ? growupEffect : rigthEffect } 2.5s infinite ease-in-out;
+                
+            }
         }
 
         &:nth-child(2) {
@@ -42,6 +93,11 @@ export const Container = styled.div`
             flex-direction: column;
             justify-content: flex-start;
             align-items: end;
+
+            span {
+                animation: ${props => props.effect ? growupEffect : leftEffect } 2.5s infinite ease-in-out;
+                
+            }
         }
     }
 
