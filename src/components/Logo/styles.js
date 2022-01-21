@@ -1,46 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-
-const growupEffect = keyframes`
-    0% {
-        transform:  scale(1);
-    }
-
-    50% {
-        transform: scale(1.09)
-    }
-
-    100% {
-        transform: scale(1);
-    }
-`
-
-const rigthEffect = keyframes`
-    0% {
-        transform:  translateX(0);
-    }
-
-    50% {
-        transform: translateX(30px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }   
-`
-
-const leftEffect = keyframes`
-    0% {
-        transform:  translateX(0);
-    }
-
-    50% {
-        transform: translateX(-30px);
-    }
-
-    100% {
-        transform: translateX(0);
-    }   
-`
+import styled from 'styled-components'
+import { growupEffect, rigthEffect, leftEffect, joinupHighEffect, joinupHigherEffect } from './effects'
 
 export const Container = styled.div.attrs(props => {
     
@@ -86,6 +45,14 @@ export const Container = styled.div.attrs(props => {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
+
+            span:nth-child(2) {
+                animation: ${props => props.effect ? growupEffect : joinupHighEffect } 2.5s infinite ease-in-out;
+            }
+
+            span:nth-child(3) {
+                animation: ${props => props.effect ? growupEffect : joinupHigherEffect } 2.5s infinite ease-in-out;
+            }
         }
 
         &:nth-child(3) {

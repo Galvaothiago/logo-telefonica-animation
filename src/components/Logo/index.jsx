@@ -9,6 +9,7 @@ export function Logo() {
             setChangeEffect(oldState => !oldState)
         }, 2500)
     }, [changeEffect])
+    
     return (
         <Container effect={changeEffect}>
             <div>
