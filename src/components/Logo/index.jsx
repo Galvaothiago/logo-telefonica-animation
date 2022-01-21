@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import { Container } from "./styles";
 
 export function Logo() {
-    const [changeEffect, setChangeEffect] = useState(false)
+    const [changeEffect, setChangeEffect] = useState(true)
 
-    useEffect(() => {
+    const handleEffect = () => {
         setTimeout(() => {
             setChangeEffect(oldState => !oldState)
-        }, 2500)
+        }, 4000)
+    }
+
+    useEffect(() => {
+        handleEffect()
+
     }, [changeEffect])
-    
     return (
         <Container effect={changeEffect}>
             <div>
@@ -23,6 +27,7 @@ export function Logo() {
             <div>
                 <span></span>
             </div>
+            <p>Telefónica</p>
         </Container>
     )
 }

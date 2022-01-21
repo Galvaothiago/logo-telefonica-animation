@@ -6,7 +6,20 @@ export const growupEffect = keyframes`
     }
 
     50% {
-        transform: scale(1.09)
+        transform: scale(1.15)
+    }
+
+    100% {
+        transform: scale(1);
+    }
+`
+export const growEffect = keyframes`
+    0% {
+        transform:  scale(1);
+    }
+
+    50% {
+        transform: scale(1.05)
     }
 
     100% {
@@ -48,7 +61,7 @@ export const joinupHighEffect = keyframes`
     }
 
     50% {
-        transform: translateY(-140px);
+        transform: translateY(-130px);
     }
 
     100% {
@@ -62,8 +75,9 @@ export const joinupHigherEffect = keyframes`
     }
 
     50% {
-        transform: translateY(-280px);
+        transform: translateY(-260px);
     }
+
 
     100% {
         transform: translateY(0);

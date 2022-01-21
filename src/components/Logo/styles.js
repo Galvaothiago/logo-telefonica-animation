@@ -1,8 +1,23 @@
 import styled from 'styled-components'
-import { growupEffect, rigthEffect, leftEffect, joinupHighEffect, joinupHigherEffect } from './effects'
+import { css } from 'styled-components'
+import { 
+    growupEffect, 
+    rigthEffect, 
+    leftEffect, 
+    joinupHighEffect, 
+    joinupHigherEffect, 
+    growEffect } from './effects'
+
+const effect_standard = css`${growupEffect} 2s infinite ease-in-out`
+const effect_one = css`${rigthEffect} 2s ${.25}s 1 ease-in-out`
+const effect_two = css`${leftEffect} 2s ${.5}s 1 ease-in-out`
+const effect_three = css`${joinupHighEffect} 2s ${.75}s 1 ease-in-out`
+const effect_four = css`${joinupHigherEffect} 2s ${1}s 1 ease-in-out`
+
+const effect_standard_low = css`${growEffect} 2s infinite ease-in-out`
 
 export const Container = styled.div.attrs(props => {
-    
+
 })`
     max-width: 25rem;
     width: 100%;
@@ -11,8 +26,8 @@ export const Container = styled.div.attrs(props => {
 
     display: flex;
     
-    background-color: rgba(0, 0, 0, 0.03);
     border-radius: 15px;
+    position: relative;
 
     div {
         width: 33%;
@@ -24,8 +39,9 @@ export const Container = styled.div.attrs(props => {
 
             background-color: #4763ed;
             border-radius: 50%;
+            transition: all 3s ease-in-out;
 
-            animation: ${growupEffect} 2.5s infinite ease-in-out;
+            animation: ${effect_standard};
         }
 
         &:nth-child(1) {
@@ -35,7 +51,7 @@ export const Container = styled.div.attrs(props => {
             align-items: start;
 
             span {
-                animation: ${props => props.effect ? growupEffect : rigthEffect } 2.5s infinite ease-in-out;
+                animation: ${props => props.effect ? effect_standard : effect_one };
                 
             }
         }
@@ -47,11 +63,11 @@ export const Container = styled.div.attrs(props => {
             align-items: center;
 
             span:nth-child(2) {
-                animation: ${props => props.effect ? growupEffect : joinupHighEffect } 2.5s infinite ease-in-out;
+                animation: ${props => props.effect ? effect_standard : effect_three };
             }
 
             span:nth-child(3) {
-                animation: ${props => props.effect ? growupEffect : joinupHigherEffect } 2.5s infinite ease-in-out;
+                animation: ${props => props.effect ? effect_standard : effect_four };
             }
         }
 
@@ -62,10 +78,25 @@ export const Container = styled.div.attrs(props => {
             align-items: end;
 
             span {
-                animation: ${props => props.effect ? growupEffect : leftEffect } 2.5s infinite ease-in-out;
+                animation: ${props => props.effect ? effect_standard : effect_two };
                 
             }
         }
+
+    }
+    p { 
+        display: block;
+        position: absolute;
+        bottom: -12rem;
+
+        color: #4763ed;
+        font-size: 5.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 800;
+
+        transition: all 3s ease-in-out;
+        animation: ${effect_standard_low};
+
     }
 
 `
