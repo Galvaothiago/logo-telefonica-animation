@@ -14,8 +14,6 @@ const effect_two = css`${leftEffect} 2s ${.5}s 1 ease-in-out`
 const effect_three = css`${joinupHighEffect} 2s ${.75}s 1 ease-in-out`
 const effect_four = css`${joinupHigherEffect} 2s ${1}s 1 ease-in-out`
 
-const effect_standard_low = css`${growEffect} 2s infinite ease-in-out`
-
 export const Container = styled.div.attrs(props => {
 
 })`
@@ -93,10 +91,6 @@ export const Container = styled.div.attrs(props => {
         font-size: 5.5rem;
         font-family: 'Roboto', sans-serif;
         font-weight: 800;
-
-        transition: all 3s ease-in-out;
-        animation: ${effect_standard_low};
-
     }
 
 `
