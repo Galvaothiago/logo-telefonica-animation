@@ -65,7 +65,6 @@ export const joinupHigherEffect = keyframes`
         transform: translateY(-290px);
     }
 
-
     100% {
         transform: translateY(0);
     }  

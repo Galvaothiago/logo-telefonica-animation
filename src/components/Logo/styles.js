@@ -5,8 +5,7 @@ import {
     rigthEffect, 
     leftEffect, 
     joinupHighEffect, 
-    joinupHigherEffect, 
-    growEffect } from './effects'
+    joinupHigherEffect } from './effects'
 
 const effect_standard = css`${growupEffect} 2s infinite ease-in-out`
 const effect_one = css`${rigthEffect} 2s ${.25}s 1 ease-in-out`
